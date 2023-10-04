@@ -1,0 +1,229 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_General.cshtml";
+}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-8 p-3">
+
+            <!--Start Slider-->
+            <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-interval="3000">
+                        <img src="~/Content/image/s1.jpg" style="max-height:400px;" class="d-block w-100 rounded rounded-4" alt="...">
+                    </div>
+                    <div class="carousel-item" data-interval="3000">
+                        <img src="~/Content/image/s2.jpg" style="max-height:400px;" class="d-block w-100 rounded rounded-4" alt="...">
+                    </div>
+                    <div class="carousel-item" data-interval="3000">
+                        <img src="~/Content/image/s3.jpg" style="max-height:400px;" class="d-block w-100 rounded rounded-4" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <!--End Slider-->
+        </div>
+        <div class="col-sm-4 p-3">
+            <marquee direction="down" scrollamount="3" behavior="alternate" onmouseover="stop()" onmouseleave="start()" height="300px;">
+                <!-- Start Offer Card-->
+                <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-4 p-2">
+                            <img src="~/Content/image/colddrink.png" style="height:80px;" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Cold Drink</h5>
+                                <p class="card-text">50% OFF</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Offer Card-->
+                <!-- Start Offer Card-->
+                <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-4 p-2">
+                            <img src="~/Content/image/vegitables.png" style="height:80px;" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Vegetable</h5>
+                                <p class="card-text">50% OFF</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Offer Card-->
+                <!-- Start Offer Card-->
+                <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-4 p-2">
+                            <img src="~/Content/image/fruits.png" style="height:80px;" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Fruit</h5>
+                                <p class="card-text">50% OFF</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Offer Card-->
+            </marquee>
+        </div>
+    </div>
+    @*@Start Category@*@
+    <div class="row">
+            @{
+                if (ViewBag.Category != null)
+                {
+                    foreach (var cat in ViewBag.Category.Rows)
+                    {
+                    
+                    <div class="col-lg-2 col-md-3 col-sm-6 text-bg-light py-2 px-3" style="height:220px;">
+                                    
+                                    <div class="card pt-1 pb-5 px-2" style="height:200px;">
+                                                    <a href="/home/product?@cat[0]" style="text-decoration:none;">
+                                                        <img src="~/Content/CatPic/@cat[2]" class="card-img-top img-fluid" alt="..." style="height:130px;">
+                                                        <div class="card-body pb-3" style="color:black;">
+                                                            <p class="card-text text-center mt-0 pt-0">@cat[1]</p>
+                                                        </div>
+                                                    </a>
+                                    </div>
+                                    
+                    </div>
+                    
+                    }
+                }
+            }
+    </div>
+    @*@End Category@*@
+
+    <div class=" fs-3 mt-5 text-center">Today's <b class="text-mycolor">Deals</b></div>
+
+    @* Start of Most Discount top 12 Products *@
+
+    <div class="row py-2 px-2">
+        @{
+            if (ViewBag.Product1 != null)
+            {
+                foreach (var p1 in ViewBag.Product1.Rows)
+                {
+                    <div class="col-lg-2 col-md-4 col-sm-12 py-2 m-0">
+                        <div class="card p-2">
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                @p1[11]%
+                                <span class="visually-hidden">unread messages</span>
+                            </span>
+
+                            <img src="~/Content/ProductPic/@p1[9]" class="card-img-top" style="height:200px;" />
+                            <div class="card-body" style="height:230px;">
+                                <b class="p-0 m-0">@p1[3]</b><br />
+                                <small class="text-muted">@p1[8]</small><br />
+                                <i class="fa-solid fa-indian-rupee-sign"></i>
+                                <s>@p1[6]</s>&nbsp; <b>@p1[7]</b>
+                                <form action="/home/addtocart" method="post">
+                                    <input type="hidden" name="salerate" value="@p1[7]" />
+                                    <input type="hidden" name="pid" value="@p1[0]" />
+                                    <div class="input-group">
+                                        <b class="input-group-text text-bg-light" onclick="mfun(@p1[0])"> <i class="fa-solid fa-minus"></i> </b>
+                                        <input type="text" name="quantity" id="txtcard_@p1[0]" class="form-control  text-center fs-5" value="0" />
+                                        <b class="input-group-text text-bg-light" onclick="pfun(@p1[0])"><i class="fa-solid fa-plus"></i> </b>
+                                    </div>
+                                    <input type="submit" value="Add" class="btn btn-outline-primary mt-2" />
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        }
+    </div>
+    @* End of Most Discount top 12 Products *@
+    @*Start of New Arrival top 12 Products*@ 
+    <div class=" fs-3 mt-5 text-center">New <b class="text-mycolor">Arrival</b></div>
+    <div class="row py-2 px-2">
+        @{
+            if (ViewBag.Product2 != null)
+            {
+                foreach (var p1 in ViewBag.Product2.Rows)
+                {
+                    <div class="col-lg-2 col-md-4 col-sm-12 py-2 m-0">
+                        <div class="card p-2">
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                @p1[11]%
+                                <span class="visually-hidden">unread messages</span>
+                            </span>
+                            <img src="~/Content/ProductPic/@p1[9]" class="card-img-top" style="height:200px;" />
+                            <div class="card-body" style="height:230px;">
+                                <b class="p-0 m-0">@p1[3]</b><br />
+                                <small class="text-muted">@p1[8]</small><br />
+                                <i class="fa-solid fa-indian-rupee-sign"></i>
+                                <s>@p1[6]</s>&nbsp; <b>@p1[7]</b>
+                                <form action="/home/addtocart" method="post">
+                                    <input type="hidden" name="salerate" value="@p1[7]" />
+                                    <input type="hidden" name="pid" value="@p1[0]" />
+                                    <div class="input-group">
+                                        <b class="input-group-text text-bg-light" onclick="m1fun(@p1[0])"> <i class="fa-solid fa-minus"></i> </b>
+                                        <input type="text" name="quantity" id="txtcard1_@p1[0]" class="form-control  text-center fs-5" value="0" />
+                                        <b class="input-group-text text-bg-light" onclick="p1fun(@p1[0])"><i class="fa-solid fa-plus"></i> </b>
+                                    </div>
+                                    <input type="submit" value="Add" class="btn btn-outline-primary mt-2" />
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        }
+    </div>
+     @*End of New Arrival top 12 Products*@ 
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script>
+        var i = 0
+        function pfun(id) {
+            var t = document.getElementById("txtcard_" + id)
+            i = t.value;
+            i++;
+            t.value = i;
+            //alert(i)
+        }
+        function mfun(id) {
+            var t = document.getElementById("txtcard_" + id)
+            i = t.value;
+            if (i > 0) {
+                i--;
+                t.value = i;
+            }
+        }
+        function p1fun(id) {
+            var t = document.getElementById("txtcard1_" + id)
+            i = t.value;
+            i++;
+            t.value = i;
+            //alert(i)
+        }
+        function m1fun(id) {
+            var t = document.getElementById("txtcard1_" + id)
+            i = t.value;
+            if (i > 0) {
+                i--;
+                t.value = i;
+            }
+        }
+    </script>
+    @*@End Product@*@
+</div>

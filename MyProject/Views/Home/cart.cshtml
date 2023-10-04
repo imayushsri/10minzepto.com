@@ -1,0 +1,115 @@
+﻿
+@{
+    ViewBag.Title = "cart";
+    Layout = "~/Views/Shared/_General.cshtml";
+}
+
+<style>
+    .a2 
+    {
+        min-height: 500px;
+    }
+</style>
+<div style="transform:translateY(20px);">
+    <h2 class="text-center"><b class="text-mycolor"><i class="fa-sharp fa-solid fa-cart-shopping" style="transform:translateY(3px);"></i> My</b> Cart</h2>
+    <p class="text-center text-mycolor fs-4 ms-5" style="transform:translateY(-25px); font-weight:900;">_____</p>
+</div>
+<div class="row p-4 a2 ">
+    <div class="col-sm-8 text-start py-3 bg-light border border-2 rounded rounded-1">
+        <!--column 1 start-->
+        @{
+            int total = 0;
+            if (ViewBag.Cart != null)
+            {
+                if (ViewBag.Cart.Rows.Count > 0)
+                {
+                    foreach (var c in ViewBag.Cart.Rows)
+                    {
+
+                        <div class="row mt-3 me-5">
+                            <div class="col-sm-2 mx-1 ">
+                                <img src="~/Content/ProductPic/@c[9]" height="70px" width="70px" />
+                            </div>
+                            <div class="col-sm-5">
+                                <b class="c">@c[3]</b><br />
+                                <small>Pack/Size : @c[8]</small><br />
+                                <small>Model : @c[5]</small>
+                            </div>
+
+                            <div class="col-sm-2">
+                                <b>Quantity : @c[14]</b><br />
+                                 
+                            </div>
+
+
+                            <div class="col-sm-1 c text-center ">
+                                <b>Total</b><br />
+                                <b>@c[15]</b>
+                                @{
+                                    total = total + Convert.ToInt32(c[15]);
+                                }
+                            </div>
+
+
+                            <div class="col-sm-1 text-danger mt-3  me-5">
+                                <a href="/home/deleteitem?CId=@c[11]" style="text-decoration:none;"> 
+                                    <i class="fa-solid fa-trash text-danger"></i>
+                                </a>
+                            </div>
+
+                        </div>
+                    }
+            }
+            }
+        }
+        <!--column 1 end-->
+    </div>
+
+    <div class="col-sm-3 ms-5 bg-light card p-4" style="max-height:400px;">
+        <h5>Billing Details</h5>
+        <div class="row">
+            <div class="col-sm-8">
+                <br />
+                <p class="text-start ps-2">Sub Total : </p>
+                <p class="text-start ps-2">Delivery Charge : </p>
+                <br />
+                <br />
+                <b class="text-start ps-2">Total(INR) : </b>
+            </div>
+            <div class="col-sm-4">
+                <br />
+                <div>
+                    <b class="text-end pe-2"><i class="fa-sharp fa-solid fa-indian-rupee-sign"></i> @total</b>
+                </div>
+                <br />
+                <div style="transform:translateY(-6px);">
+                    <b class="text-end pe-2"><i class="fa-sharp fa-solid fa-indian-rupee-sign"></i> 30Rs</b>
+                </div>
+                <br />
+                <div>
+                    <b class="text-end pe-2"></b>
+                </div>
+                <br />
+                <div style="transform:translateY(-14px);">
+                    <b class="text-end pe-2"><i class="fa-sharp fa-solid fa-indian-rupee-sign"></i>  @(total+30)</b>
+                </div>
+            </div>
+
+            <center><input type="button" onclick="procced()" value="Proceed to Checkout" class="btn btn-danger w-75 mt-3" /></center>
+        </div>
+
+    </div>
+</div>
+<script>
+    function procced()
+    {
+        var res = confirm("Do you want to Order all Products");
+        if (res) {
+            location.href = "/home/order";
+        }
+        else {
+            return false;
+        }
+    }
+</script>
+

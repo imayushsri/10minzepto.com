@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewBag.Title = "Product";
+    Layout = "~/Views/Shared/_General.cshtml";
+}
+<div class="container-fluid">
+    <div style="transform:translateY(20px);">
+        <h2 class="text-center"><b class="text-mycolor"><i class="fa-brands fa-product-hunt"></i></b> Products</h2>
+        <p class="text-center text-mycolor fs-4 ms-5" style="transform:translateY(-20px); font-weight:900;">________</p>
+    </div>
+    <div class="row">
+        <!-- SubCategory List-->
+
+        <div class="col-sm-2 m-0">
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                    SubCategory List
+                </a>
+                @{
+                    if (ViewBag.subcat != null)
+                    {
+                        foreach (var cat in ViewBag.subcat.Rows)
+                        {
+                            <a href="/home/product?CId=@cat[1]&scat=@cat[0]" class="list-group-item list-group-item-action">
+                                <img src="~/Content/subcatpic/@cat[3]" height="30px" width="30px" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; />   @cat[2]
+                            </a>
+                        }
+                    }
+                }
+            </div>
+        </div>
+        <!-- List Of Product-->
+        <div class="col-sm-10 m-0 pe-5">
+            <div class="row">
+                @{
+                    if (ViewBag.product1 != null)
+                    {
+                        foreach (var p1 in ViewBag.product1.Rows)
+                        {
+                            <div class="col-lg-2 col-md-4 col-sm-12 py-2 m-0">
+                                <div class="card mb-3" style="height:450px;">
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        @p1[11]%
+                                        <span class="visually-hidden">unread messages</span>
+                                    </span>
+                                    <img src="~/Content/ProductPic/@p1[9]" class="card-img-top img-fluid" style="height:200px;" />
+                                    <div class="card-body p-3">
+                                        <b>@p1[3]</b>
+                                        <small class="text-muted"> @p1[8] <span class="ms-4 text-success" style="margin-left:80px;">@p1[5]</span></small>
+                                        <p class="mt-1">
+                                            <i class="fa-solid fa-indian-rupee-sign"></i>
+                                            <s>@p1[6]</s>&nbsp; <b>@p1[7]</b>
+                                        </p>
+                                        <form action="/home/addtocart" method="post">
+                                            <input type="hidden" name="salerate" value="@p1[7]" />
+                                            <input type="hidden" name="pid" value="@p1[0]" />
+                                            <div class="input-group">
+                                                <b class="input-group-text" onclick="m1fun(@p1[0])"> <i class="fa-solid fa-minus"></i> </b>
+                                                <input type="text" name="quantity" id="txtcard1_@p1[0]" class="form-control  text-center fs-5" value="0" />
+                                                <b class="input-group-text" onclick="p1fun(@p1[0])"><i class="fa-solid fa-plus"></i> </b>
+                                            </div>
+                                            <input type="submit" value="Add" class="btn btn-outline-primary mt-2" />
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                }
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var i = 0
+
+
+        function p1fun(id) {
+            var t = document.getElementById("txtcard1_" + id)
+            i = t.value;
+            i++;
+            t.value = i;
+            //alert(i)
+        }
+        function m1fun(id) {
+            var t = document.getElementById("txtcard1_" + id)
+            i = t.value;
+            if (i > 0) {
+                i--;
+                t.value = i;
+            }
+        }
+    </script>
+</div>
+

@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Category";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<div class="row px-4">
+    <!--Start card-->
+    <div class="col-sm-4 card">
+        <div class="card-body">
+            <div style="transform:translateY(20px);" class="text-center">
+                <h4 class="text-center"><b class="text-mycolor"><i class="fa-solid fa-table-cells-large"></i> Product</b> Category</h4>
+                <p class="text-center text-mycolor fs-4 ms-4" style="transform:translateY(-30px); font-weight:900;">________</p>
+            </div>
+            <form method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <lable for="exmpleInputEmail">Category Name</lable>
+                    <input type="text" class="form-control mt-1" name="catname" id="catname" ari-describedby="Category" placeholder="Enter your product.." />
+                </div>
+                <div class="form-group mt-3">
+                    <label for="exmapleInputEmail">Category Icon</label>
+                    <input type="file" class="form-control mt-1" name="caticon" id="caticon" ari-describedby="Category" placeholder="Enter your product.." />
+                </div>
+                <input type="submit" value="Add Now" class="btn btn-outline-primary mt-3" />
+            </form>
+        </div>
+    </div>
+    <!--End card-->
+    <div class="col-sm-8 text-center ">
+        <div class="card-body">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>SN</th>
+                        <th>Category</th>
+                        <th>Category Icon</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody style="line-height:50px;">
+                    @{
+                        foreach (var row in ViewBag.Category.Rows)
+                        {
+                            <tr>
+                                <td>@row[0]</td>
+                                <td>@row[1]</td>
+                                <td><img src="~/Content/CatPic/@row[2]" height="50px" width="50px" /></td>
+                                <td><a href="/admin/deleteitem?CId=@row[0]" style="text-decoration:none;"><i class="fa-solid fa-trash text-danger"></i></a></td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

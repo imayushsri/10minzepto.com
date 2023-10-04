@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewBag.Title = "SignUp";
+    Layout = "~/Views/Shared/_General.cshtml";
+}
+<div class="container-fluid">
+    <div class="row mt-3">
+        <div class="col-sm-6 mx-auto bg-light p-4" style="box-shadow:1px 1px 5px 0px;">
+            <form method="post">
+                <div style="transform:translateY(20px);">
+                    <h2 class="text-center"><b class="text-mycolor"><i class="fa-solid fa-right-to-bracket"></i> Sign</b> Up</h2>
+                    <p class="text-center text-mycolor fs-4 ms-4" style="transform:translateY(-30px); font-weight:900;">_______</p>
+                </div>
+                <div class="mb-2">
+                    <b>Full Name : </b>
+                    <div class="input-group mt-1">
+                        <i class="input-group-text border form-control" style="background: white; height:40px !important;">
+                            <div class="border rounded" style="padding:8px; width: 40px; transform: translateX(-12px); height:40px; background: #e9ecef;">
+                                <i class="fa-solid fa-user aa"></i>
+                            </div>
+                            <input type="text" placeholder="Full Name" name="name" class="form-control pb-2 pe-4" style="border:none; background: white; height: 38px;" />
+                        </i>
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <b>Email : </b>
+                    <div class="input-group mt-1">
+                        <i class="input-group-text border form-control" style="background: white; height:40px !important;">
+                            <div class="border rounded" style="padding:8px; width: 40px; transform: translateX(-12px); height:40px; background: #e9ecef;">
+                                <i class="fa-regular fa-envelope aa"></i>
+                            </div>
+                            <input type="text" placeholder="Email..." name="email" class="form-control pb-2 pe-4" style="border:none; background: white; height: 38px;" />
+                        </i>
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <b>Mobile No : </b>
+                    <div class="input-group mt-1">
+                        <i class="input-group-text border form-control" style="background: white; height:40px !important;">
+                            <div class="border rounded" style="padding:8px; width: 40px; transform: translateX(-12px); height:40px; background: #e9ecef;">
+                                <i class="fa-sharp fa-solid fa-phone aa"></i>
+                            </div>
+                            <input type="number" placeholder="Mobile..." name="mobno" class="form-control pb-2 pe-4" style="border:none; background: white; height: 38px;" />
+                        </i>
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <b>Password : </b>
+                    <div class="input-group mt-1">
+                        <i class="input-group-text border form-control" style="background: white; height:40px !important;">
+                            <div class="border rounded" style="padding:8px; width: 40px; transform: translateX(-12px); height:40px; background: #e9ecef;">
+                                <i class="fa-solid fa-lock aa"></i>
+                            </div>
+                            <input type="password" placeholder="Password..." name="password" class="form-control pb-2 pe-4" style="border:none; background: white; height: 38px;" />
+                        </i>
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <b>Address : </b>
+                    <div class="input-group mt-1">
+                        <i class="input-group-text border form-control" style="background: white; height:40px !important;">
+                            <div class="border rounded" style="padding:8px; width: 40px; transform: translateX(-12px); height:40px; background: #e9ecef;">
+                                <i class="fa-solid fa-location-dot aa"></i>
+                            </div>
+                            <textarea placeholder="Address" name="address" class="form-control pb-2 pe-4" style="border:none; background: white; height: 38px;"></textarea>
+                        </i>
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <b>Landmark : </b>
+                    <div class="input-group mt-1">
+                        <i class="input-group-text border form-control" style="background: white; height:40px !important;">
+                            <div class="border rounded" style="padding:8px; width: 40px; transform: translateX(-12px); height:40px; background: #e9ecef;">
+                                <i class="fa-solid fa-landmark aa"></i>
+                            </div>
+                            <input type="text" placeholder="Landmark..." name="landmark" class="form-control pb-2 pe-4" style="border:none; background: white; height: 38px;" />
+                        </i>
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <b>Pin Code : </b>
+                    <div class="input-group mt-1">
+                        <i class="input-group-text border form-control" style="background: white; height:40px !important;">
+                            <div class="border rounded" style="padding:8px; width: 40px; transform: translateX(-12px); height:40px; background: #e9ecef;">
+                                <i class="fa-sharp fa-solid fa-code aa"></i>
+                            </div>
+                            <input type="text" placeholder="Pin Code..." name="pincode" class="form-control pb-2 pe-4" style="border:none; background: white; height: 38px;" />
+                        </i>
+                    </div>
+                </div>
+                <input type="submit" class="btn btn-outline-primary form-control mt-3" value="Register Now" />
+            </form>
+        </div>
+    </div>
+</div>
+

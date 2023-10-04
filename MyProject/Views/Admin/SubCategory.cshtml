@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "SubCategory";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+<div class="row ps-4">
+    <!--Start card-->
+    <div class="col-sm-4 card">
+        <div class="card-body">
+            <div style="transform:translateY(20px);" class="text-center">
+                <h4 class="text-center"><b class="text-mycolor"><i class="fa-solid fa-table-cells"></i> Sub</b> Category</h4>
+                <p class="text-center text-mycolor fs-4 ms-1" style="transform:translateY(-30px); font-weight:900;">________</p>
+            </div>
+            <form method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <lable for="exmpleInputEmail">Choose Category</lable>
+                    <select class="form-control mt-1" name="category" style="color: #595c5f;">
+                        <option value="0">--Choose Category--</option>
+                        @{
+                           if (ViewBag.SubCat != null)
+                           { 
+                            foreach (var data in ViewBag.SubCat.Rows)
+                            {
+                            <option value="@data[0]" style="color: #595c5f;">@data[1]</option>
+                            }
+                           }
+                        }
+                    </select>
+                </div>
+                <div class="form-group mt-3">
+                    <lable for="exmpleInputEmail">Sub-Category Name</lable>
+                    <input type="text" class="form-control mt-1" name="subcatname" ari-describedby="Category" placeholder="Sub-Category..." />
+                </div>
+                <div class="form-group mt-3">
+                    <label for="exmapleInputEmail">Sub-Category Icon</label>
+                    <input type="file" class="form-control mt-1" name="subcaticon" id="caticon" ari-describedby="Category" />
+                </div>
+                <input type="submit" value="Add Now" class="btn btn-outline-primary mt-3" />
+            </form>
+        </div>
+    </div>
+    <div class="col-sm-8">
+        <table class="table table-bordered table-striped">
+            <thead class="text-bg-dark text-center">
+                <tr>
+                    <th>SId</th>
+                    <th>Category</th>
+                    <th>Sub-Name</th>
+                    <th>Sub Cat Pic</th>
+                </tr>
+            </thead>
+            <tbody class="text-center">
+               @{ 
+                   if(ViewBag.SubCategory != null)
+                   {
+                       foreach(var data in ViewBag.SubCategory.Rows)
+                       {
+                               <tr>
+                                   <td>@data[0]</td>
+                                   <td>@data[1]</td>
+                                   <td>@data[2]</td>
+                                   <td><img src="~/Content/SubCatPic/@data[3]" style="height :50px" width:"50px" /></td>
+                                   <td><a href="/admin/deletesubitem?SId=@data[0]" style="text-decoration:none;"><i class="fa-solid fa-trash text-danger"></i></a></td>
+                               </tr>
+                       }
+                   }
+               }
+            </tbody>
+        </table>
+    </div>
+    <!--End card-->
+    </div>
+

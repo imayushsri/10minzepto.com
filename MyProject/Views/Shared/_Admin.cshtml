@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/css/all.css" rel="stylesheet" />
+    <style>
+        :root {
+            --bgcolor: linear-gradient(45deg,#29B6F6,#0288D1);
+            --txtcolor: #0288D1;
+        }
+
+        .bg-mycolor {
+            background: var(--bgcolor) !important;
+        }
+
+        .text-mycolor {
+            color: var(--txtcolor) !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row text-bg-dark text-center">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                Welcome to Admin Zone
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+
+            </div>
+        </div>
+        <div class="row menu">
+            <!--Start Menu-->
+            <nav class="navbar navbar-dark bg-dark fixed-top sticky-top" style="margin-top:0.1%;">
+                <a class="navbar-brand ps-5 fs-2" href="#">10MinZepto</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">10MinZepto</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="~/Admin/index">DashBoard</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/Admin/Category">Add Category</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/Admin/SubCategory">Add Sub Category</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/Admin/Product">Add Product</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Managment
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" href="~/Admin/ProductManagement">Product</a></li>
+                                    <li><a class="dropdown-item" href="~/Admin/UserManagement">User</a></li>
+                                    <li><a class="dropdown-item" href="~/Admin/CoustmerSupport">Customer Support</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/Admin/Orders">Oders</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/Admin/ChangePassword">Change Password</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/admin/logout">LogOut</a>
+                            </li>
+
+                        </ul>
+                        <form class="d-flex mt-3" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-success" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+            <!--End Menu-->
+        </div>
+        <div class="row">
+            <div class="col-sm-12 py-3" style="min-height:400px;">
+                @RenderBody()
+            </div>
+        </div>
+        <div class="row footer text-bg-dark text-center py-4 fs-5">
+            <div class="col-sm-6">
+                &copy; <a href="#" style="text-decoration:none; color:white;">10MinZepto Pvt Ltd.</a>
+            </div>
+            <div class="col-sm-6">
+                Design and Developed by <b>Ayush Srivastava</b>
+            </div>
+        </div>
+    </div>
+    <script src="~/Content/js/bootstrap.bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "AdminLogin";
+    Layout = "~/Views/Shared/_General.cshtml";
+}
+    <div class="row mx-auto mb-2 py-4">
+        <div class="col-6 mx-auto bg-light rounded rounded-3 p-3" style="box-shadow: 1px 0px 5px 0px">
+            <form method="post">
+                <h3 class="mb-3">Admin<b class="text-mycolor"> Login</b></h3>
+                <label>Admin ID : </label>
+                <div class="input-group mb-3">
+                    <i class="input-group-text bg-mycolor">
+                        <i class="fa-solid fa-user"></i>
+                    </i>
+                    <input type="text" placeholder="Enter Id" class="form-control" name="adminid" required />
+                </div>
+                <label>Password : </label>
+                <div class="input-group mb-3">
+                    <i class="input-group-text bg-mycolor">
+                        <i class="fa-solid fa-lock"></i>
+                    </i>
+                    <input type="password" placeholder="Password..." class="form-control" name="password" required />
+                </div>
+                <input type="submit" value="Login Now" class="form-control mt-3 btn btn-outline-primary" />
+            </form>
+        </div>
+    </div>

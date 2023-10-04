@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "SignIn";
+    Layout = "~/Views/Shared/_General.cshtml";
+}
+    <div class="container" style=" background-color:white; text-align: center; width: 500px;height:700px; margin: 0px auto;">
+        <div class="row ">
+            <form method="post">
+                <div style="transform:translateY(20px);">
+                    <h2 class="text-center"><b class="text-mycolor"><img src="~/Content/image/profile.png" style="height:40px;" /> Sign</b> In</h2>
+                    <p class="text-center text-mycolor fs-4" style="transform:translateY(-25px); font-weight:900;">________</p>
+                </div>
+                <div class="col-sm-12">
+                    <div class="input-group mt-4 form-control">
+                        <i class="input-group-text" style="background: #e9ecef;">
+                            <i class="fa-solid fa-envelope"></i>
+                        </i>
+                        <input type="email" name="emailid" class="form-control" placeholder="Email...">
+                    </div>
+                    <div class="input-group  mt-4 form-control">
+                        <i class="input-group-text" style="background: #e9ecef;">
+                            <i class="fa-solid fa-key"></i>
+                        </i>
+                        <input type="password" name="password" class="form-control" placeholder="Password...">
+                    </div>
+                    <input type="submit" value="Sign In" class="btn btn-outline-primary  form-control mt-3">
+                </div>
+            </form>
+        </div>
+    </div>

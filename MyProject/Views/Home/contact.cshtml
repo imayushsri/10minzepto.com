@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "contact";
+    Layout = "~/Views/Shared/_General.cshtml";
+}
+<div class="container-fluid">
+    <div class="row pt-4">
+        <div class="col-sm-6 mx-auto">
+            <div style="transform:translateY(20px);">
+                <h2 class="text-center"><b class="text-mycolor"><i class="fa-sharp fa-solid fa-headset"></i> Contact</i></b> Us</h2>
+                <p class="text-center text-mycolor fs-4 ms-5" style="transform:translateY(-25px); font-weight:900;">________</p>
+            </div>
+            <form method="post">
+                <input type="text" placeholder="Name..." required class="form-control mb-2" name="name" />
+                <input type="email" placeholder="Email..." required class="form-control mb-2" name="email" />
+                <input type="number" placeholder="Phone..." required class="form-control mb-2" name="mobile" />
+                <textarea placeholder="Message..." required name="message" class="form-control mb-2"></textarea><br />
+                <input type="submit" class="btn btn-outline-primary form-control" value="Save" />
+            </form>
+        </div>
+    </div>
+</div>
+

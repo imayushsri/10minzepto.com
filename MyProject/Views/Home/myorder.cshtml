@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "myorder";
+    Layout = "~/Views/Shared/_General.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <h2>Pending Orders</h2><hr />
+        @{
+            if (ViewBag.order != null)
+            {
+                if (ViewBag.order.Rows.Count > 0)
+                {
+                    foreach (var d in ViewBag.order.Rows)
+                    {
+
+
+                        <div class="col-sm-12">
+                            <div class="card mb-3">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="~/Content/ProductPic/@d[9]" class="img-fluid rounded-start" alt="..." style="height:200px; transform:translateX(70px);">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">Product Details</th>
+                                                        <th scope="col">Quantity</th>
+                                                        <th scope="col">Subtotal</th>
+                                                        <th scope="col">Status</th>
+                                                        <th scope="col">Order Date</th>
+                                                        <th>Wants to cancel</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="table-group-divider">
+                                                    <tr>
+                                                        <th scope="row">
+                                                            <b>@d[3]</b><br />
+                                                            @d[8] &nbsp; &nbsp; &nbsp; &nbsp; @d[5]
+                                                        </th>
+                                                        <td>@d[14]</td>
+                                                        <td>@d[15]</td>
+                                                        <td>
+                                                            <button class="btn btn-danger">@d[17]</button>
+                                                        </td>
+                                                        <td>@d[18]</td>
+                                                        <td>
+                                                            <input type="button" class="btn btn-outline-danger" value="Cancel Order" />
+                                                        </td>
+                                                    </tr>
+
+                                                    @*<tr>
+                                                            <th scope="row">2</th>
+                                                            <td>Jacob</td>
+                                                            <td>Thornton</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">3</th>
+                                                            <td colspan="2">Larry the Bird</td>
+                                                            <td></td>
+                                                        </tr>*@
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            }
+        }
+    </div>
+</div>

@@ -1,0 +1,160 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+<style>
+    .box:hover {
+        transform: scale(0.9);
+        transition: all 1s;
+        box-shadow: 0px 0px 5px 1px;
+    }
+    .card {
+        height:150px;
+    }
+    .a
+    {
+        text-decoration:none;
+    }
+</style>
+
+<div class="container">
+    <div><h4>DashBoard <i class="fa-sharp fa-solid fa-bars"></i></h4></div>
+    <div class="row bg-light">
+        <div class="col-sm-2 py-3 box" style="transition:all 1s;">
+            <a href="/admin/category" class="a">
+                <div class="card">
+                    <br>
+                    <b class="text-center fs-4"><i class="fa-sharp fa-solid fa-bars-progress text-center"></i></b>
+                    <div class="card-body">
+                        <p class="card-text text-center m-0">Category Management</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-2 py-3 box" style="transition:all 1s;">
+            <a href="/admin/subcategory" class="a">
+                <div class="card">
+                    <br>
+                    <b class="text-center fs-4"><i class="fa-sharp fa-solid fa-list-ul text-center"></i></b>
+                    <div class="card-body">
+                        <p class="card-text text-center m-0">Sub-Category Management</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-2 py-3 box" style="transition:all 1s;">
+            <a href="/admin/product" class="a">
+                <div class="card">
+                    <br>
+                    <b class="text-center fs-4"><i class="fa-brands fa-product-hunt text-center"></i></b>
+                    <div class="card-body">
+                        <p class="card-text text-center m-0">Product Management</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-2 py-3 box" style="transition:all 1s;">
+            <a href="/admin/changepassword" class="a">
+                <div class="card">
+                    <br>
+                    <b class="text-center fs-4"><i class="fa-sharp fa-solid fa-unlock-keyhole text-center"></i></b>
+                    <div class="card-body">
+                        <p class="card-text text-center m-0">Change Password</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-2 py-3 box" style="transition:all 1s;">
+            <a href="#" class="a">
+                <div class="card">
+                    <br>
+                    <b class="text-center fs-4"><i class="fa-sharp fa-solid fa-headset"></i></b>
+                    <div class="card-body">
+                        <p class="card-text text-center m-0">Costumer Supports</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-2 py-3 box" style="transition:all 1s;">
+            <a href="#" class="a">
+                <div class="card">
+                    <br>
+                    <b class="text-center fs-4"><i class="fa-sharp fa-solid fa-cart-shopping text-center"></i></b>
+                    <div class="card-body">
+                        <p class="card-text text-center m-0">Orders</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="row bg-light">
+        <div class="col-sm-2 py-3 box" style="transition:all 1s;">
+            <a href="#" class="a">
+                <div class="card">
+                    <br>
+                    <b class="text-center fs-4"><i class="fa-sharp fa-solid fa-users"></i></b>
+                    <div class="card-body">
+                        <p class="card-text text-center m-0">User Management</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-2 py-3 box" style="transition:all 1s;">
+            <a href="#" class="a">
+                <div class="card">
+                    <br>
+                    <b class="text-center fs-4"><i class="fa-sharp fa-solid fa-face-smile text-center"></i></b>
+                    <div class="card-body">
+                        <p class="card-text text-center m-0">Ratings</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-2 py-3 box" style="transition:all 1s;">
+            <a href="#" class="a">
+                <div class="card">
+                    <br>
+                    <b class="text-center fs-4"><i class="fa-regular fa-credit-card text-center"></i></b>
+                    <div class="card-body">
+                        <p class="card-text text-center m-0">Payments</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-2 py-3 box" style="transition:all 1s;">
+            <a href="#" class="a">
+                <div class="card">
+                    <br>
+                    <b class="text-center fs-4"><i class="fa-solid fa-envelope-open-text text-center"></i></b>
+                    <div class="card-body">
+                        <p class="card-text text-center m-0">Messages</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-sm-2 py-3 box" style="transition:all 1s;">
+            <a href="#" class="a">
+                <div class="card">
+                    <br>
+                    <b class="text-center fs-4"><i class="fa-solid fa-chart-pie text-center"></i></b>
+                    <div class="card-body">
+                        <p class="card-text text-center m-0">Accounting</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-2 py-3 box" style="transition:all 1s;">
+            <a href="#" class="a">
+                <div class="card">
+                    <br>
+                    <b class="text-center fs-4"><i class="fa-solid fa-van-shuttle text-center"></i></b>
+                    <div class="card-body">
+                        <p class="card-text text-center m-0">Transport</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

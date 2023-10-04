@@ -1,0 +1,168 @@
+﻿
+@{
+    ViewBag.Title = "Product";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+<div class="container-fluid">
+    <div class="row px-4">
+        <div class="col-sm-12">
+        <div class="col-sm-5 p-3" style="box-shadow:0px 0px 3px 0px;">
+            <div style="transform:translateY(20px);" class="text-center">
+                <h4 class="text-center"><b class="text-mycolor"><i class="fa-solid fa-table-cells-large"></i> Product</b> Category</h4>
+                <p class="text-center text-mycolor fs-4 ms-4" style="transform:translateY(-30px); font-weight:900;">________</p>
+            </div>
+            <form method="post" enctype="multipart/form-data">
+                <label>Category</label>
+                <div class="input-group mt-1 mb-3">
+                    <i class="input-group-text border form-control" style="background: white; height:40px !important;">
+                        <div class="border rounded" style="padding:8px; width: 40px; transform: translateX(-12px); height:40px; background: #e9ecef;">
+                            <i class="fa-solid fa-list aa"></i>
+                        </div>
+                        <select name="pcat" class="form-control" style="border:none;">
+                            <option value="0">--Choose Product Category--</option>
+                            @{
+                                if (ViewBag.Cat != null)
+                                {
+                                    foreach (var data in ViewBag.Cat.Rows)
+                                    {
+                                        <option value="@data[0]" style="color: #595c5f;">@data[1]</option>
+                                    }
+                                }
+                            }
+                        </select>
+                    </i>
+                </div>
+                <label>Sub-Category</label>
+                <div class="input-group mt-1 mb-3">
+                    <i class="input-group-text border form-control" style="background: white; height:40px !important;">
+                        <div class="border rounded" style="padding:8px; width: 40px; transform: translateX(-12px); height:40px; background: #e9ecef;">
+                            <i class="fa-solid fa-bars aa"></i>
+                        </div>
+                        <select name="psubcat" class="form-control" style="border:none;">
+                            <option value="0">--Choose Product Sub-Category--</option>
+                            @{
+                                if (ViewBag.SubCat != null)
+                                {
+                                    foreach (var data in ViewBag.SubCat.Rows)
+                                    {
+                                        <option value="@data[0]" style="color: #595c5f;">@data[1]</option>
+                                    }
+                                }
+                            }
+                        </select>
+                    </i>
+                </div>
+                <label>Product Name</label>
+                <div class="input-group mt-1 mb-3">
+                    <i class="input-group-text border form-control" style="background: white; height:40px !important;">
+                        <div class="border rounded" style="padding:8px; width: 40px; transform: translateX(-12px); height:40px; background: #e9ecef;">
+                            <i class="fa-sharp fa-solid fa-pen aa"></i>
+                        </div>
+                        <input type="text" placeholder="Title..." name="pname" class="form-control pb-2 pe-4" style="border:none; background: white; height: 38px;" />
+                    </i>
+                </div>
+                <label>Description</label>
+                <div class="input-group mt-1 mb-3">
+                    <i class="input-group-text border form-control" style="background: white; height:40px !important;">
+                        <div class="border rounded" style="padding:8px; width: 40px; transform: translateX(-12px); height:40px; background: #e9ecef;">
+                            <i class="fa-sharp fa-solid fa-circle-info aa"></i>
+                        </div>
+                        <textarea name="pdesc" rows="4" placeholder="Description..." class="form-control pb-2 pe-4" style="border:none; background: white; height: 38px;"></textarea>
+                    </i>
+                </div>
+                <label>Model</label>
+                <div class="input-group mt-1 mb-3">
+                    <i class="input-group-text border form-control" style="background: white; height:40px !important;">
+                        <div class="border rounded" style="padding:8px; width: 40px; transform: translateX(-12px); height:40px; background: #e9ecef;">
+                            <i class="fa-solid fa-object-group aa"></i>
+                        </div>
+                        <input type="text" placeholder="Model..." name="pmodel" class="form-control pb-2 pe-4" style="border:none; background: white; height: 38px;" />
+                    </i>
+                </div>
+                <label>MRP</label>
+                <div class="input-group mt-1 mb-3">
+                    <i class="input-group-text border form-control" style="background: white; height:40px !important;">
+                        <div class="border rounded" style="padding:8px; width: 40px; transform: translateX(-12px); height:40px; background: #e9ecef;">
+                            <i class="fa-solid fa-money-bill aa"></i>
+                        </div>
+                        <input type="number" placeholder="MRP..." name="pmrp" class="form-control pb-2 pe-4" style="border:none; background: white; height: 38px;" />
+                    </i>
+                </div>
+                <label>Sale Rate</label>
+                <div class="input-group mt-1 mb-3">
+                    <i class="input-group-text border form-control" style="background: white; height:40px !important;">
+                        <div class="border rounded" style="padding:8px; width: 40px; transform: translateX(-12px); height:40px; background: #e9ecef;">
+                            <i class="fa-sharp fa-solid fa-indian-rupee-sign aa"></i>
+                        </div>
+                        <input type="number" placeholder="Sale Rate..." name="psalerate" class="form-control pb-2 pe-4" style="border:none; background: white; height: 38px;" />
+                    </i>
+                </div>
+                <label>Pack/Size</label>
+                <div class="input-group mt-1 mb-3">
+                    <i class="input-group-text border form-control" style="background: white; height:40px !important;">
+                        <div class="border rounded" style="padding:8px; width: 40px; transform: translateX(-12px); height:40px; background: #e9ecef;">
+                            <i class="fa-sharp fa-solid fa-boxes-packing aa"></i>
+                        </div>
+                        <input type="text" placeholder="Pack..." name="psize" class="form-control pb-2 pe-4" style="border:none; background: white; height: 38px;" />
+                    </i>
+                </div>
+                <label>Product Picture</label>
+                <div class="input-group mt-1 mb-3">
+                    <i class="input-group-text border form-control" style="background: white; height:40px !important;">
+                        <div class="border rounded" style="padding:8px; width: 40px; transform: translateX(-12px); height:40px; background: #e9ecef;">
+                            <i class="fa-sharp fa-solid fa-image aa"></i>
+                        </div>
+                        <input type="file" name="picon" class="form-control pb-2 pe-4" style="border:none; background: white; height: 38px;" />
+                    </i>
+                </div>
+                <input type="submit" value="Add Product" class="btn btn-outline-primary mt-3" />
+            </form>
+        </div>
+            </div>
+    </div>
+    <div class="row mt-3" style="padding-left:100px; box-sizing:border-box;">
+        <div class="col-sm-12">
+            <table class="table-bordered">
+                <thead>
+                    <tr class=" text-bg-dark text-center">
+                        <th class="p-2">Pro ID</th>
+                        <th class="p-2">Category</th>
+                        <th class="p-2">Sub-Category</th>
+                        <th class="p-2">Title</th>
+                        <th class="p-2">Description</th>
+                        <th class="p-2">Model</th>
+                        <th class="p-2">MRP</th>
+                        <th class="p-2">Sale Rate</th>
+                        <th class="p-2">Pack</th>
+                        <th class="p-2">Pic</th>
+                        <th class="p-2">Add Date</th>
+                        <th class="p-2">Action</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center px-3">
+                    @{
+                        foreach (var data in ViewBag.Product.Rows)
+                        {
+                                        <tr>
+                                            <td class="px-2">@data[12]</td>
+                                            <td class="px-2">@data[1]</td>
+                                            <td class="px-2">@data[3]</td>
+                                            <td class="px-2">@data[4]</td>
+                                            <td class="px-2">@data[5]</td>
+                                            <td class="px-2">@data[6]</td>
+                                            <td class="px-2">@data[7]</td>
+                                            <td class="px-2">@data[8]</td>
+                                            <td class="px-2">@data[9]</td>
+                                            <td class="px-2"><img src="~/Content/ProductPic/@data[10]" height="50px" width="50px" /></td>
+                                            <td class="px-2">@data[11]</td>
+                                            <td class="px-2"><i class="fa fa-trash text-danger"></i></td>
+                                        </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
